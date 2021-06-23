@@ -29,8 +29,9 @@ The `gsn-with-ganache` script above does 2 things:
 
 ## Deploying the instance of GSN HUB to Mumbai network
 
-1. Add `pass12` file to the root of project with mnemonic words inside
-2. Fund the accounts using this faucet: https://faucet.matic.network/
-3. Run `npx gsn deploy --mnemonic ./pass12 --workdir . --network https://rpc-mumbai.maticvigil.com`
+1. Run `yarn install `
+2. Add `pass12` file to the root of project with mnemonic words inside
+3. Fund the accounts using this faucet: https://faucet.matic.network/
+4. Run `npx gsn deploy --mnemonic ./pass12 --workdir . --network https://rpc-mumbai.maticvigil.com`
 
 
