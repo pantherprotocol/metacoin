@@ -12,26 +12,18 @@ Other than supporting GSN, the project added links to [tenderly](https://dashboa
 ## Running the project locally
 #### The "TL;DR"
 1. Run `yarn install `
-2. Run `yarn run gsn-with-ganache` to run local ganache and bring up GSN contracts and relayer.
-3. In another terminal, run `truffle migrate` to install MetaCoin
-4. Run `yarn run dev` to run metacoin demo on `http://localhost:8080`
-5. open a browser, and you can mint, and send coins, with no eth in your (metamask) account
-6. you can also switch to `ropsten`/`kovan`/`rinkeby` to see it running there
-    (or open it in http://metacoin.opengsn.org)
+2. Run `truffle develop` to run local ganache and truffle console 
+3. In the truffle console run `migrate` to deploy the contracts
+4. In another terminal run `yarn run dev` to run metacoin demo on `http://localhost:8080`
+5. Open a browser, and you can mint, and send coins, with no eth in your (metamask) account
 
 #### NOTES:
-
-The `gsn-with-ganache` script above does 2 things:
-
+Alternatively, steps 2 and 3 you can accomplish starting `gsn-with-ganache` script that does 2 things:
 - Starts `ganache` with same chainId and networkId (to overcome [limitation](https://github.com/MetaMask/metamask-extension/issues/8385) of Metamask)
 - calls `npx gsn start`, to start all GSN components locally.
 
-
 ## Deploying the instance of GSN HUB to Mumbai network
-
 1. Run `yarn install `
 2. Add `pass12` file to the root of project with mnemonic words inside
 3. Fund the accounts using this faucet: https://faucet.matic.network/
 4. Run `npx gsn deploy --mnemonic ./pass12 --workdir . --network https://rpc-mumbai.maticvigil.com`
-
-
