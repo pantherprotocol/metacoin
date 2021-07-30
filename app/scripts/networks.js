@@ -29,6 +29,16 @@ module.exports = {
       relayHub: '0x6650d69225CA31049DB7Bd210aE4671c0B1ca132',
       paymaster: '0xA6e10aA9B038c9Cddea24D2ae77eC3cE38a0c016',
       forwarder: '0x83A54884bE4657706785D7309cf46B58FE5f6e8a'
+    },
+    80001:{
+      addressUrl: 'https://mumbai.polygonscan.com/contract/rinkeby/',
+      txUrl: 'https://mumbai.polygonscan.com/tx/rinkeby/',
+      // addressUrl: 'https://rinkeby.etherscan.io/address/',
+      // txUrl: 'https://rinkeby.etherscan.io/tx/',
+      metacoin: '0xAadD6262dF98ceb58AD66e820507e52d150CE35F',
+      relayHub: '0x6646cD15d33cE3a6933e36de38990121e8ba2806',
+      paymaster: '0xcA94aBEdcC18A10521aB7273B3F3D5ED28Cf7B8A',
+      forwarder: '0x4d4581c01A457925410cd3877d17b2fd4553b2C5'
     }
   }
 }

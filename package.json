@@ -57,6 +57,6 @@
   "dependencies": {
     "@opengsn/contracts": "2.2.2",
     "@opengsn/provider": "2.2.2",
-    "truffle-hdwallet-provider": "^1.0.17"
+    "@truffle/hdwallet-provider": "1.4.1"
   }
 }
