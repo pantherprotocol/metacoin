@@ -31,17 +31,24 @@ const App = {
     const self = this
     // This should actually be web3.eth.getChainId but MM compares networkId to chainId apparently
     web3.eth.net.getId(async function (err, networkId) {
-      if (parseInt(networkId) < 1000) { // We're on testnet/
-        network = networks[networkId]
+      console.log("NetworkID currently: ", JSON.stringify(networkId))
+      networkId = 80001
+      console.log("Networks currently: ", JSON.stringify(networks))
+
+      // if (parseInt(networkId) < 1000 || parseInt(networkId) > 80000) { // We're on testnet/
+        network = networks[80001]
         MetaCoin.deployed = () => MetaCoin.at(network.metacoin)
-      } else { // We're on ganache
-        console.log('Using local ganache')
-        network = {
-          relayHub: require('../../build/gsn/RelayHub.json').address,
-          paymaster: require('../../build/gsn/Paymaster.json').address,
-          forwarder: require('../../build/gsn/Forwarder.json').address
-        }
-      }
+      // } else { // We're on ganache
+      //   console.log('Using local ganache')
+      //   network = {
+      //     relayHub: require('../../build/gsn/RelayHub.json').address,
+      //     paymaster: require('../../build/gsn/Paymaster.json').address,
+      //     forwarder: require('../../build/gsn/Forwarder.json').address
+      //   }
+      // }
+      // network = networks[networkId]
+      // MetaCoin.deployed = () => MetaCoin.at(network.metacoin)
+      console.log("Network currently: ", JSON.stringify(network))
       if (!network) {
         const fatalmessage = document.getElementById('fatalmessage')
         fatalmessage.innerHTML = "Wrong network. please switch to 'kovan' or 'ropsten' or 'rinkeby'"
@@ -64,7 +71,7 @@ const App = {
       await provider.init()
       web3.setProvider(provider)
 
-      // Bootstrap the MetaCoin abstraction for Use.
+      // Bootstrp the MetaCoin abstraction for Use.
       MetaCoin.setProvider(web3.currentProvider)
 
       // Get the initial account balance so it can be displayed.
